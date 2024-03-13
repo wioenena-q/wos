@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+wallpapers=(/etc/nixos/assets/wallpaper*.{jpg,png})
+
+len=${#wallpapers[@]}
+
+random_index=$(( RANDOM % $len))
+random_wallpaper="${wallpapers[$random_index]}"
+swww img --transition-type any --transition-fps 120 $random_wallpaper
